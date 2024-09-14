@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b9b1dab4ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>[OM] Graduação</title>
+    <link rel="icon"
+        href="https://www.habbo.com.br/habbo-imaging/badge/b09134s43114s41194f74f3131b8a5c9311558ee0f561db7e0.gif">
+
+    <style>
+      html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://i.imgur.com/IufTVTQ.jpg') center center fixed;
+            background-size: cover;
+        }
+
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        header {
+            color: white;
+            background-color: #212121;
+            margin: -8px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        img {
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .container-fluid {
+            border: 1px solid red;
+        }
+
+        input {
+            margin-right: 5px;
+        }
+
+        .span {
+            font-weight: bold;
+        }
+
+        /* Agora estou usando o seletor #cartao1 */
+        #cartao1 {
+            position: absolute;
+            top: -10%;
+            left: 20%;
+            transform: translate(30%, 90%);
+        }
+
+        .floating-image {
+            position: absolute;
+            left: 48%;
+            top: 60px;
+            transform: translateX(-50%);
+            color: white;
+        }
+
+        @keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 20px rgba(255, 251, 251);
+    }
+    50% {
+        box-shadow: 0px 0px 30px rgba(136, 119, 225, 0.4);
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgb(32, 27, 71);
+    }
+}
+  /* Flexbox para centralizar o conteúdo */
+  .main-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Estilização do card */
+    .card-login {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 20px;
+        background: rgba(52, 58, 64, 0.5); /* Transparência */
+        border-radius: 20px;
+        color: white;
+        margin: 0 auto; /* Centraliza o card horizontalmente */
+        animation: pulse 2s infinite;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .card-login > h1 {
+        color: #ffc107;
+        font-weight: 400;
+        margin: unset;
+    }
+        .form-group label {
+            color: rgb(0, 0, 0);
+        }
+
+        .form-control {
+            background-color: #ffffff;
+            color: #495057;
+        }
+
+        .card-footer {
+    background-color: rgba(233, 233, 233, 0.5); /* 0.5 representa 50% de opacidade */
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem 1.25rem;
+    margin-top: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+        #btnIniciar {
+            width: 100%;
+            padding: 16px 0px;
+            margin: 25px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #ffffff;
+            background: #5a5a5a;
+            cursor: pointer;
+            box-shadow: 0px 10px 20px -12px #5a3600;
+            transition: 1s ease;
+        }
+
+        #btnIniciar:hover {
+            box-shadow: none;
+            background: #5a5a5a85;
+            transition: 1s ease;
+        }
+
+        @media only screen and (max-width: 950px) {
+            .card-login {
+                width: 85%;
+            }
+        }
+
+        .card-login {
+            width: 98%;
+        }
+
+        @media only screen and (max-width: 950px) {
+            .card-login {
+                width: 85%;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+    .card-login {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+
+        @media only screen and (max-width: 600px) {
+            .main-login {
+                flex-direction: column;
+            }
+
+            .right-login-avatar,
+            .right-balao {
+                display: none;
+            }
+
+            .left-login {
+                width: 100%;
+                height: auto;
+            }
+
+            .right-login {
+                width: 100%;
+                height: auto;
+            }
+
+            .left-login-image {
+                width: 55vw;
+                margin-bottom: -20vw;
+            }
+
+            .left-login>h1 {
+                font-size: 11vw;
+                margin-bottom: -8vw;
+            }
+
+            .left-login>p {
+                font-size: 4vw;
+            }
+
+            .textfield>a {
+                font-size: 4vw;
+            }
+
+            .card-login {
+                width: 98%;
+            }
+
+            .textfield>label {
+                width: 12%;
+            }
+        }
+
+        .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(52, 58, 64, 0.5); /* 0.5 representa 50% de opacidade */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-fluid {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+
+      
+    .opcao-incorreta {
+        background-color: #000000; /* Cor de fundo para opções incorretas */
+        border: 1px solid #371f96; /* Borda vermelha para opções incorretas */
+        padding: 5px; /* Espaçamento interno para melhor visualização */
+        margin-bottom: 5px; /* Espaçamento inferior para melhor visualização */
+    }
+
+
+    </style>
+
+    <script>
+        function iniciar() {
+            alert("Botão Iniciar clicado!");
+           
+        }
+    </script>
+</head>
+
+<body>
+   
+    <section id="cartao1">
+        <div class="card-login">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="width: 500px;">
+                        <div id="inicio">
+                            <center><div class="p-2 mb-2 bg-dark text-white">Dados iniciais</div></center>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Insira o seu nick:</label>
+                                    <input type="text" class="form-control" placeholder="Digite aqui..." id="campoNome"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <input type="button" id="btnIniciar" value="Iniciar"
+                                    class="btn btn-dark btn-warning" onclick="iniciar()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <div class="footer">
+        <div>Todos os direitos reservados à subcompanhia da Ordem Militar.</div>
+        <div>  Desenvolvido por Qox ©</div></div>
+  
+    <section class="card2 d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="d-none" id="inicioQuestionario">
+                        <center><div class="p-2 mb-2 bg-dark text-white">AVALIAÇÃO I</div> </center>
+                        <div class="card-body">
+                            <!--- Perguntas --->
+                            <form action="">
+                                <p><label><span class="badge badge-dark">01</span> - Quando são realizadas as reuniões da Ordem Militar?</label> <br>
+                                    <input type="radio" name="p1" value="A" id="A1">a) Quinzenalmente às sextas, às 20hrs.
+                                    </br>
+                                    <input type="radio" name="p1" value="B" id="B1">b) Semanalmente aos domingos, às 18hrs.
+                                    </br>
+                                    <input type="radio" name="p1" value="C" id="C1">c) Semanalmente às sextas, às 20hrs.
+                                    </br>
+                                    <input type="radio" name="p1" value="D" id="D1">d) Quinzenalmente aos domingos, às 15hrs.
+                                    </br></p>
+
+
+                                <p><label><span class="badge badge-dark">02</span> - Onde deve postar suas aulas?</label><br>
+                               
+                                    <input type="radio" name="p2" value="A" id="A2">a) Em “[OM] Agenda de Atividades”, no subfórum do diário oficial.</br>
+                                    <input type="radio" name="p2" value="B" id="B2">b) Em “[OM] Conselheiros”, no subfórum dos scripts de aulas.</br>
+                                    <input type="radio" name="p2" value="C" id="C2">c) Em “[OM] Relatório de Aulas”, no subfórum dos conselheiros.</br>
+                                    <input type="radio" name="p2" value="D" id="D2">d) Em “[OM] Requerimentos de Membros”, no subfórum da Ordem Militar.</br></p>
+                                <p><label><span class="badge badge-dark">03</span> - Caso haja mais de um aluno, como você deverá postar a aula?</label><br>
+                                    <input type="radio" name="p3" value="A" id="A3">a) Caso haja mais de um aluno, deve-se postar todos em formulários diferentes.</br>
+                                    <input type="radio" name="p3" value="B" id="B3">b) Caso haja mais de um aluno, deve-se postar a todos no mesmo formulário, separando os nicknames com " / ".</br>
+                                    <input type="radio" name="p3" value="C" id="C3">c) Caso haja mais de um aluno, deve-se postar a todos no mesmo formulário, separando os nicknames com um espaço.</br>
+                                    <input type="radio" name="p3" value="D" id="D3">d) Não se pode aplicar uma mesma aula a mais de um aluno.</br></p>
+
+<p><label><span class="badge badge-dark">04</span> - Todas as aulas são direcionadas a cabos/equivalência e/ou superiores?</label><br>
+                                    <input type="radio" name="p5" value="A" id="A5">a) Sim, todas podem ser aplicadas a cabos/equivalência ou superiores.</br>
+                                    <input type="radio" name="p5" value="B" id="B5">b) Não, Especialização Militar é para sargento+/equivalência+ e Aptidão Judiciária e Administração Interpessoal apenas para subtenente+/equivalência+</br>
+                                    <input type="radio" name="p5" value="C" id="C5">c) Não, Especialização Militar cabos/equivalências não podem receber.</br>
+                                    <input type="radio" name="p5" value="D" id="D5">d) Não, Aptidão Judiciária e Administração Interpessoal é só para subtenente+/equivalência+</br></p>
+
+                                <p><label><span class="badge badge-dark">05</span> - Qual a primeira medida a ser feita antes de iniciar a aula?</label><br>
+                                    <input type="radio" name="p6" value="A" id="A6">a) Abrir o script e começar a passar a aula normalmente.</br>
+                                    <input type="radio" name="p6" value="B" id="B6">b) Abrir o formulário mas não anotar o horário inicial da aula.</br>
+                                    <input type="radio" name="p6" value="C" id="C6">c) Abrir o formulário e anotar o horário inicial da aula e os nicknames dos alunos presentes.</br>
+                                    <input type="radio" name="p6" value="D" id="D6">d) Abrir o formulário e anotar apenas os nicknames dos alunos presentes.</br></p>
+
+                                    <p><label><span class="badge badge-dark">06</span> - Qual a punição ao conselheiro que não cumprir com sua meta? E em caso de reincidência?</label><br>
+                                        <input type="radio" name="p4" value="A" id="A4">a) Advertência interna; Expulsão.</br>
+                                        <input type="radio" name="p4" value="B" id="B4">b) 5 medalhas efetivas negativas; Expulsão.</br>
+                                        <input type="radio" name="p4" value="C" id="C4">c) 5 medalhas efetivas negativas; 10 medalhas efetivas negativas.</br>
+                                        <input type="radio" name="p4" value="D" id="D4">d) Advertência interna; 10 medalhas efetivas negativas.</br></p>
+                                </form>
+                           
+                            <form id="myForm" hidden>
+                                <label>nick_enviar</label>
+                                <textarea id="enviar_nick" name="nick_enviar"></textarea>
+                                <br />
+                                <label>pontuação</label>
+                                <textarea id="enviar_pontuacao" name="pontuacao_enviar"></textarea>
+                                <br />
+                                <label>Veredito</label>
+                                <textarea id="enviar_veredito" name="Veredito"></textarea>
+                                <br />
+                                <label>Hora de acesso</label>
+                                <textarea id="acesso_hora_data" name="hora_data_acesso"></textarea>
+                                <br />
+                                <label>Hora de envio</label>
+                                <textarea id="envio_hora_data" name="hora_data_envio"></textarea>
+                                <br />
+                                <label>respostas</label>
+                                <textarea id="respostas_grad" name="respostas"></textarea>
+                                <br/>
+                                <label>graduação</label>
+                                <textarea id="graduacao_tipo" name="graduacao">Avaliação I</textarea>
+                                <br/>
+                            </form>
+                            <!--- botão de envia --->
+                            <p><input class="btn btn-success" id="finalizar" value="Enviar" type="button"
+                                    onclick='SubForm()'></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegistraNome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="exampleModalLabel">Nickname
+                        não inserido!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Por favor, coloque o seu nickname no campo!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar e
+                        inserir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSemMarcar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="exampleModalLabel">
+                        Alternativa não preenchida.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Responda a todas a questões da avaliação antes de enviar!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar à
+                        avaliação. </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Aprovado-->
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card d-none" id="aprovacao">
+                    <div class="card-header bg-success text-white p-3">
+                        <h3 id="aprovado"></h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Parabéns, você foi aprovado(a) na Avaliação!</p>
+                        <p>Retorne para o jogo e comunique ao Avaliador para que</p>
+                        <p>a conclusão da sua Avaliação!</p>
+                        <hr>
+                        <span style="font-weight: bold ">Gabarito:</span> <br>
+                        <span class="span">1)</span> C
+                        <span class="span">2)</span> B 
+                        <span class="span">3)</span> A 
+                        <span class="span">4)</span> D 
+                        <span class="span">5)</span> B 
+                        <span class="span">6)</span> C 
+                        <span class="span">7)</span> D 
+                        <span class="span">8)</span> B 
+                        <br><br>
+                        <span style="font-weight: bold ">Suas respostas:</span> <br>
+                        <p id="resp_aprovado"></p>
+                    </div>
+                    <div class="card-footer"></div>
+                    <button class="btn btn-block btn-outline-success" onclick="
+                                                                               ()">Fechar Avaliação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Reprovado-->
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card d-none" id="reprovacao">
+                    <div class="card-header bg-danger text-white p-3">
+                        <h3 id="reprovado"></h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Infelizmente você errou 2 ou mais questões e foi reprovado.</p>
+                        <p>Retorne para o jogo e comunique o Graduador para que</p>
+                        <p>possa finalizar a sua avaliação.</p>
+                        <br>
+                        <span class="span">Suas respostas:</span><br>
+                        <p id="resp_reprovado"></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-block btn-outline-primary" onclick="fecharjanela()">Fechar Avaliação</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    function fecharjanela() {
+        window.close();
+    }
+    let informacoes = document.getElementById('informacoes')
+    let questionario = document.getElementById('inicioQuestionario')
+    let inicioCampoNome = document.getElementById('inicio')
+
+    // Variáveis de data
+
+    window.onload = function () {
+        var dataAtual = new Date();
+        var dia = dataAtual.getDate();
+        var mes = (dataAtual.getMonth() + 1);
+        var ano = dataAtual.getFullYear();
+        var horas = dataAtual.getHours();
+        var minutos = dataAtual.getMinutes();
+        var segundos = dataAtual.getSeconds();
+        // Variáveis referentes à data e hora
+        var horario_comeco
+        var dia_comeco
+
+        //Ajustar formatação ao padrão utilizado nos formulários google, utilizando sempre horário no formado xx:xx e data xx/xx/xxxx
+        if (horas < 10) {
+            var horario_comeco = "0" + horas + ":" + minutos
+        }
+        if (minutos < 10) {
+            var horario_comeco = "" + horas + ":" + "0" + minutos
+        }
+        if (horas < 10 && minutos < 10) {
+            var horario_comeco = "0" + horas + ":" + "0" + minutos
+        }
+        if (horas >= 10 && minutos >= 10) {
+            var horario_comeco = "" + horas + ":" + minutos
+        }
+        if (segundos < 10) {
+            var horario_comeco = horario_comeco + ":0" + segundos
+        } else {
+            var horario_comeco = horario_comeco + ":" + segundos
+        }
+        //  *********NÃO MUDAR O "VAR" DO IF PARA "LET", OU IRÁ BUGAR TODO O SISTEMA!*********
+
+        if (dia < 10) {
+            var dia_comeco = "0" + dia + "/" + mes + "/" + ano
+        }
+        if (mes < 10) {
+            var dia_comeco = dia + "/0" + mes + "/" + ano
+        }
+        if (dia < 10 && mes < 10) {
+            var dia_comeco = "0" + dia + "/0" + mes + "/" + ano
+        }
+        if (dia >= 10 && mes >= 10) {
+            var dia_comeco = dia + "/" + mes + "/" + ano
+        }
+        //Preencher input com hora de acesso
+        document.getElementById('acesso_hora_data').innerHTML = dia_comeco + " " + horario_comeco
+    }
+
+    function iniciar() {
+        let nome = document.getElementById('campoNome').value
+        if (nome != "") {
+            inicioCampoNome.classList.add('d-none');
+            questionario.classList.remove('d-none');
+        } else {
+            $('#modalRegistraNome').modal('show')
+        }
+        //Preencher input com nick/nota
+        let nick = document.getElementById('campoNome').value
+        document.getElementById('enviar_nick').innerHTML = nick
+        let nick_enviar = document.getElementById('enviar_nick')
+        let esconder = document.getElementById('esconder_img')
+        esconder.style.display = 'none'
+    }
+
+    let pontuacao = 0
+    let veredito = ""
+    let verificar = 0
+
+    function SubForm() {
+        // Verifica se alguma questão não foi respondida
+        if (document.getElementById('A1').checked || document.getElementById('B1').checked || document.getElementById(
+            'C1').checked || document.getElementById('D1').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+        if (document.getElementById('A2').checked || document.getElementById('B2').checked || document.getElementById(
+            'C2').checked || document.getElementById('D2').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+        if (document.getElementById('A3').checked || document.getElementById('B3').checked || document.getElementById(
+            'C3').checked || document.getElementById('D3').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+        if (document.getElementById('A4').checked || document.getElementById('B4').checked || document.getElementById(
+            'C4').checked || document.getElementById('D4').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+        if (document.getElementById('A5').checked || document.getElementById('B5').checked || document.getElementById(
+            'C5').checked || document.getElementById('D5').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+
+        if (document.getElementById('A6').checked || document.getElementById('B6').checked || document.getElementById(
+            'C6').checked || document.getElementById('D6').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+
+        if (document.getElementById('A7').checked || document.getElementById('B7').checked || document.getElementById(
+            'C7').checked || document.getElementById('D7').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+
+        if (document.getElementById('A8').checked || document.getElementById('B8').checked || document.getElementById(
+            'C8').checked || document.getElementById('D8').checked) {
+            verificar = verificar
+        } else {
+            verificar++
+        }
+
+
+        if (verificar == 0) {
+
+            // Mostrar questões incorretas em caso de reprovação
+            if (veredito == "Reprovado") {
+    let questoesIncorretas = [];
+    
+    // Adicione as questões incorretas ao array questoesIncorretas
+    if (!document.getElementById('A1').checked) questoesIncorretas.push(1);
+    if (!document.getElementById('C2').checked) questoesIncorretas.push(2);
+    if (!document.getElementById('B3').checked) questoesIncorretas.push(3);
+    if (!document.getElementById('D4').checked) questoesIncorretas.push(4);
+    if (!document.getElementById('C5').checked) questoesIncorretas.push(5);
+
+    // Exibir as questões incorretas no elemento HTML correspondente
+    let questoesIncorretasList = document.getElementById('questoesIncorretas');
+    questoesIncorretas.forEach(function (questao) {
+        let listItem = document.createElement('li');
+        listItem.textContent = `Questão ${questao}`;
+        questoesIncorretasList.appendChild(listItem);
+    });
+}
+
+            // Contabilizar pontuação
+            if (document.getElementById('C1').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('B2').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('A3').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('D4').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('B5').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('C6').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('D7').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+            if (document.getElementById('B8').checked) {
+                pontuacao++
+            } else {
+                pontuacao = pontuacao
+            }
+               
+
+                // Ver se foi aprovado ou não; para aprovar, é necessário acertar no mínimo 6 questões
+                if (pontuacao >= 1) {
+                    veredito = "Aprovado"
+                    document.getElementById('enviar_veredito').innerHTML = veredito
+                    document.getElementById('aprovado').innerHTML = `Aprovado! Você acertou ${pontuacao}/8`
+                } else {
+                    veredito = "Reprovado"
+                    document.getElementById('enviar_veredito').innerHTML = veredito
+                    document.getElementById('reprovado').innerHTML = `Reprovado! Você acertou ${pontuacao}/8`
+                }
+                document.getElementById('enviar_pontuacao').innerHTML = pontuacao
+                var dataAtual = new Date();
+                var dia = dataAtual.getDate();
+                var mes = (dataAtual.getMonth() + 1);
+                var ano = dataAtual.getFullYear();
+                var horas = dataAtual.getHours();
+                var minutos = dataAtual.getMinutes();
+                var segundos = dataAtual.getSeconds();
+                var horario_envio
+                var dia_envio
+
+                // Ajustar formatação ao padrão utilizado nos formulários google, utilizando sempre horário no formato xx:xx e data xx/xx/xxxx
+                if (horas < 10) {
+                    var horario_envio = "0" + horas + ":" + minutos
+                }
+                if (minutos < 10) {
+                    var horario_envio = "" + horas + ":" + "0" + minutos
+                }
+                if (horas < 10 && minutos < 10) {
+                    var horario_envio = "0" + horas + ":" + "0" + minutos
+                }
+                if (horas >= 10 && minutos >= 10) {
+                    var horario_envio = "" + horas + ":" + minutos
+                }
+                if (segundos < 10) {
+                    var horario_envio = horario_envio + ":0" + segundos
+                } else {
+                    var horario_envio = horario_envio + ":" + segundos
+                }
+                // *********NÃO MUDAR O "VAR" DO IF PARA "LET", OU IRÁ BUGAR TODO O SISTEMA!*********
+                if (dia >= 10 && mes >= 10) {
+                    var dia_envio = dia + "/" + mes + "/" + ano
+                }
+                if (dia < 10 && mes < 10) {
+                    var dia_envio = "0" + dia + "/0" + mes + "/" + ano
+                }
+                if (dia < 10) {
+                    var dia_envio = "0" + dia + "/" + mes + "/" + ano
+                }
+                if (mes < 10) {
+                    var dia_envio = dia + "/0" + mes + "/" + ano
+                }
+                // Preencher input com hora de acesso
+                document.getElementById('envio_hora_data').innerHTML = dia_envio + " " + horario_envio
+
+                // Respostas instrutor
+                var rspt1
+            var rspt2
+            var rspt3
+            var rspt4
+            var rspt5
+            var rspt6
+            var rspt7
+            var rspt8
+            var rspt9
+            var rspt10
+            var gabarito
+
+            if(document.getElementById('A1').checked){
+              var rspt1 = "A"
+            } else if(document.getElementById('B1').checked){
+              var rspt1 = "B"
+            } else if(document.getElementById('C1').checked){
+              var rspt1 = "C"
+            } else if(document.getElementById('D1').checked){
+              var rspt1 = "D"
+            }
+            if(document.getElementById('A2').checked){
+              var rspt2 = "A"
+            } else if(document.getElementById('B2').checked){
+              var rspt2 = "B"
+            } else if(document.getElementById('C2').checked){
+              var rspt2 = "C"
+            } else if(document.getElementById('D2').checked){
+              var rspt2 = "D"
+            }
+            if(document.getElementById('A3').checked){
+              var rspt3 = "A"
+            } else if(document.getElementById('B3').checked){
+              var rspt3 = "B"
+            } else if(document.getElementById('C3').checked){
+              var rspt3 = "C"
+            } else if(document.getElementById('D3').checked){
+              var rspt3 = "D"
+            }
+            if(document.getElementById('A4').checked){
+              var rspt4 = "A"
+            } else if(document.getElementById('B4').checked){
+              var rspt4 = "B"
+            } else if(document.getElementById('C4').checked){
+              var rspt4 = "C"
+            } else if(document.getElementById('D4').checked){
+              var rspt4 = "D"
+            }
+            if(document.getElementById('A5').checked){
+              var rspt5 = "A"
+            } else if(document.getElementById('B5').checked){
+              var rspt5 = "B"
+            } else if(document.getElementById('C5').checked){
+              var rspt5 = "C"
+            } else if(document.getElementById('D5').checked){
+              var rspt5 = "D"
+            }
+            if(document.getElementById('A6').checked){
+              var rspt6 = "A"
+            } else if(document.getElementById('B6').checked){
+              var rspt6 = "B"
+            } else if(document.getElementById('C6').checked){
+              var rspt6 = "C"
+            } else if(document.getElementById('D6').checked){
+              var rspt6 = "D"
+            }
+
+            if(document.getElementById('A7').checked){
+              var rspt7 = "A"
+            } else if(document.getElementById('B7').checked){
+              var rspt7 = "B"
+            } else if(document.getElementById('C7').checked){
+              var rspt7 = "C"
+            } else if(document.getElementById('D7').checked){
+              var rspt7 = "D"
+            }
+            if(document.getElementById('A8').checked){
+              var rspt8 = "A"
+            } else if(document.getElementById('B8').checked){
+              var rspt8 = "B"
+            } else if(document.getElementById('C8').checked){
+              var rspt8 = "C"
+            } else if(document.getElementById('D8').checked){
+              var rspt8 = "D"
+            }
+
+            
+                
+
+                document.getElementById('respostas_grad').innerHTML =
+                "1) " + rspt1 +  
+            " 2) " + rspt2 + 
+            " 3) " + rspt3 + 
+            " 4) " + rspt4 + 
+            " 5) " + rspt5 + 
+            " 6) " + rspt6 + 
+            " 7) " + rspt7 + 
+            " 8) " + rspt8 
+            
+                document.getElementById('resp_aprovado').innerHTML =
+                " <span class='span'>1)</span> " + rspt1 +  
+            " <span class='span'>2)</span> " + rspt2 + 
+            " <span class='span'>3)</span> " + rspt3 + 
+            " <span class='span'>4)</span> " + rspt4 + 
+            " <span class='span'>5)</span> " + rspt5 + 
+            " <span class='span'>6)</span> " + rspt6 + 
+            " <span class='span'>7)</span> " + rspt7 +
+            " <span class='span'>8)</span> " + rspt8
+           
+
+                document.getElementById('resp_reprovado').innerHTML =
+                " <span class='span'>1)</span> " + rspt1 +  
+            " <span class='span'>2)</span> " + rspt2 + 
+            " <span class='span'>3)</span> " + rspt3 + 
+            " <span class='span'>4)</span> " + rspt4 + 
+            " <span class='span'>5)</span> " + rspt5 + 
+            " <span class='span'>6)</span> " + rspt6 + 
+            " <span class='span'>7)</span> " + rspt7 +
+            " <span class='span'>8)</span> " + rspt8
+
+                // salvar numa planilha cada resposta + status 
+                $.ajax({
+                    url: "https://api.sheetmonkey.io/form/cNRuLHK93w4rcm5HXo37Pt",
+                    type: "post",
+                    data: $("#myForm").serializeArray(),
+                    success: function () { },
+                    error: function () { }
+                });
+
+                // Mensagem aprovado/reprovado
+                if (veredito == "Aprovado") {
+                    inicioCampoNome.classList.add('d-none');
+                    questionario.classList.add('d-none');
+                    let aprovacao = document.getElementById('aprovacao')
+                    setTimeout(() => {
+                        questionario.classList.add('d-none');
+                        aprovacao.classList.remove("d-none")
+                    }, 400);
+                } else {
+                    inicioCampoNome.classList.add('d-none');
+                    questionario.classList.add('d-none');
+                    let reprovacao = document.getElementById('reprovacao')
+                    setTimeout(() => {
+                        questionario.classList.add('d-none');
+                        reprovacao.classList.remove("d-none")
+                    }, 400);
+                }
+
+            } else {
+                $('#modalSemMarcar').modal('show');
+                verificar = 0;
+            }
+        }
+    </script>
+
+    <script src=" https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const bgAnimation = document.getElementById('bgAnimation');
+        const numberOfColorBoxes = 400;
+
+        for (let i = 0; i < numberOfColorBoxes; i++) {
+            const colorBox = document.createElement('div');
+            colorBox.classList.add('colorBox');
+            bgAnimation.appendChild(colorBox);
+        }
+    </script>
+
+</body>
+
+</html>
